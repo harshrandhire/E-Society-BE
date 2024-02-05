@@ -1,0 +1,2152 @@
+{
+	"info": {
+		"_postman_id": "c7ab0de6-11b2-4810-be99-30fc29a71d4d",
+		"name": "eSociety-postman 05-12-2023",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19532021",
+		"_collection_link": "https://galactic-crater-836833.postman.co/workspace/My-Workspace~e6a178f5-aa29-4bec-8378-4b3691bc1f2b/collection/19532021-c7ab0de6-11b2-4810-be99-30fc29a71d4d?action=share&source=collection_link&creator=19532021"
+	},
+	"item": [
+		{
+			"name": "Document",
+			"item": [
+				{
+					"name": "create-document",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "document_name",
+									"value": "Aniket",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "abc",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/shubh/OneDrive/Pictures/sample.pdf"
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "uploadedBy",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/document/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/document/getAll",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"document",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-department",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/document/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingle-department",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/document/8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-department",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "document_name",
+									"value": "Aniket",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "abc",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "uploadedBy",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/shubh/OneDrive/Pictures/sample.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/document/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create-user-by-admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Ram\",\r\n    \"lastName\": \"Dev\",\r\n    \"email\": \"ram.5057@gmail.com\",\r\n    \"phone\": \"8012400024\",\r\n    \"role\": \"Manager\",\r\n    \"propertyId\": [1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/admin-create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"admin-create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-user-by-manager",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"firstName\": \"Teanat19\",\r\n//     \"lastName\": \"Test19\",\r\n//     \"email\": \"nototi712d22@wermink.com\",\r\n//     \"phone\": \"7545152008\",\r\n//     \"role\": \"Tenant\"\r\n//     // \"\" : \"\"\r\n// }\r\n\r\n// {\r\n//     \"firstName\": \"PlumberRamesh\",\r\n//     \"lastName\": \"Test\",\r\n//     \"email\": \"plumbere@example.com\",\r\n//     \"phone\": \"8547856931\",\r\n//     \"role\": \"Plumber\"\r\n//     // \"propertyId\": \"3\", \r\n//     // \"blockId\": \"2\",\r\n//     // \"unitId\": \"1\"\r\n// }\r\n{\r\n    \"firstName\": \"testtenent1f\",\r\n    \"lastName\": \"Test\",\r\n    \"email\": \"gffvff@example.com\",\r\n    \"phone\": \"8549856956\",\r\n    \"role\": \"Tenant\",\r\n    \"propertyId\": \"1\", \r\n    \"blockId\": \"1\",\r\n    \"unitId\": \"1\",\r\n    \"managerId\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/manager-create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"manager-create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-user-by-manager multiple",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n    \"firstName\": \"Swapnil\",\r\n    \"lastName\": \"patil\",\r\n    \"email\": \"sagar@gmail.com\",\r\n    \"phone\": \"9198123134\",\r\n    \"role\": \"Plumber\"\r\n    // \"propertyId\": \"1\",\r\n    // \"blockId\": \"2\",\r\n    // \"unitId\": \"1\",\r\n    // \"managerId\": 2\r\n},{\r\n    \"firstName\": \"Swapngil\",\r\n    \"lastName\": \"patigl\",\r\n    \"email\": \"swaqygfi@gmail.com\",\r\n    \"phone\": \"82337036058\",\r\n    \"role\": \"Plumber\"\r\n    // \"propertyId\": \"1\", \r\n    // \"blockId\": \"2\",\r\n    // \"unitId\": \"1\",\r\n    // \"managerId\": 2\r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/manager-create-multiple",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"manager-create-multiple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll-users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "managerId",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-users (update-by-admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n// // update manager here..\r\n// {\r\n//   /*   \"email\": \"newemsail@example.com\",\r\n//     \"phone\": \"1234507890\",\r\n//     \"role\": \"Manager\", */\r\n//     \"propertyId\": [2,3]\r\n// }\r\n\r\n\r\n{\r\n    \"firstName\": \"NAVEEN2\",\r\n    \"lastName\": \"AD\",\r\n    \"email\": \"manag223.5057@gmail.com\",\r\n    \"phone\": \"8012400022\",\r\n    \"role\": \"manager\",\r\n    \"propertyId\": [1,3]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().data.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userNameOrEmail\": \"aniket.bediskar.5057@gmail.com\",\r\n    \"password\":\"y)PEg(vS\",\r\n    \"phone\" : \"7600431200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     // admin\r\n//     \"userNameOrEmail\": \"admin@example.com\",\r\n//     \"password\": \"Admin123\"\r\n// }\r\n\r\n// {\r\n//     // manager\r\n//     \"userNameOrEmail\": \"ram.5057@gmail.com\",\r\n//     \"password\": \"J<(5xgbw\"\r\n// }\r\n\r\n{\r\n    // tenant\r\n    \"userNameOrEmail\": \"harshal.sonar.5057@gmail.com\",\r\n    \"password\": \"*t_a?T@^\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot-Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"xapavin292@ksyhtc.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/forgot-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset-password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\":\"Aniket@5057\",\r\n    \"confirmPassword\":\"Aniket@5057\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJhbmlrZXQuYmVkaXNrYXIuNTA1N0BnbWFpbC5jb20iLCJpYXQiOjE2OTcwMTc0NTgsImV4cCI6MTY5NzAxOTI1OH0.g5PBSVMW_kPUfHcYNG_JN74zTgG_rf3hUsH37E4c5oA",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"reset-password",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJhbmlrZXQuYmVkaXNrYXIuNTA1N0BnbWFpbC5jb20iLCJpYXQiOjE2OTcwMTc0NTgsImV4cCI6MTY5NzAxOTI1OH0.g5PBSVMW_kPUfHcYNG_JN74zTgG_rf3hUsH37E4c5oA"
+							],
+							"query": [
+								{
+									"key": "resetToken",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhbmlrZXQuYmVkaXNrYXIuNTA1N0BnbWFpbC5jb20iLCJpYXQiOjE2OTUxMDc4MzEsImV4cCI6MTY5NTEwOTYzMX0.78c8QK5fJhtEfRQDwznhfVtlgBsgg3cxzbI4E7KN2Ig",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"oldPassword\": \"-i!fPfo_\",\r\n  \"newPassword\": \"Aniket@5057\",\r\n  \"confirmPassword\": \"Aniket@5057\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/change-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count-for-adminPanel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/property/count/property",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"count",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count-for-managerPanel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "managerid",
+								"value": "18",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/property/countManager/property",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"countManager",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset-password Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\":\"Aniket@123\",\r\n    \"confirmPassword\":\"Aniket@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjk2MzA5NDU2LCJleHAiOjE2OTYzMTMwNTZ9.gaIrkCxw0O7y7ZwbN-J-h3rlpCRWkWTrEyOYr-XKgSk",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"reset-password",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjk2MzA5NDU2LCJleHAiOjE2OTYzMTMwNTZ9.gaIrkCxw0O7y7ZwbN-J-h3rlpCRWkWTrEyOYr-XKgSk"
+							],
+							"query": [
+								{
+									"key": "resetToken",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhbmlrZXQuYmVkaXNrYXIuNTA1N0BnbWFpbC5jb20iLCJpYXQiOjE2OTUxMDc4MzEsImV4cCI6MTY5NTEwOTYzMX0.78c8QK5fJhtEfRQDwznhfVtlgBsgg3cxzbI4E7KN2Ig",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCountsForAdminTable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/property/countAdminTable/property",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"countAdminTable",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCountFormanagerTable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/property/countManagerTable/property",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"countManagerTable",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-manager-List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/managerlist/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"managerlist",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-tenant (By manager)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"firstName\": \"NaveenChinta\",\r\n//     \"lastName\": \"chinthakindi\",\r\n//     \"email\": \"plumbejmrhhe@example.com\",\r\n//     \"phone\": \"8549856932\",\r\n//     \"role\": \"Tenant\",\r\n//     \"propertyId\": \"3\",\r\n//     \"blockId\": \"1\",\r\n//     \"unitId\": \"1\"\r\n// }\r\n\r\n// {\r\n//     \"firstName\": \"PlumberRameshBhes\",\r\n//     \"lastName\": \"Test\",\r\n//     \"email\": \"plumbere@example.com\",\r\n//     \"phone\": \"8547856931\",\r\n//     \"role\": \"Plumber\"\r\n//     // \"propertyId\": \"3\", \r\n//     // \"blockId\": \"2\",\r\n//     // \"unitId\": \"1\"\r\n// }\r\n\r\n{\r\n    \"firstName\": \"UpdateTest96\",\r\n    \"lastName\": \"Test\",\r\n    \"email\": \"gffgg@example.com\",\r\n    \"phone\": \"8549856958\",\r\n    \"role\": \"Tenant\",\r\n    \"propertyId\": \"1\", \r\n    \"blockId\": \"1\",\r\n    \"unitId\": \"5\",\r\n    \"managerId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/managerupdate/15",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"managerupdate",
+								"15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "property",
+			"item": [
+				{
+					"name": "create-property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"property_name\": \"Property-3\",\r\n    \"property_description\": \"2 bhk & all\",\r\n    \"property_location\": \"Surat\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/property/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-propertys",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "managerId",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/property/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/property/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"property_name\": \"Prayosha-2\",\r\n    \"property_description\": \"with garden\",\r\n    \"property_location\": \"Saniya-kande\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/property/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/property/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-available-property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/property/available/property",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"available",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count-property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/property/count/property",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"count",
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "managers properties list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "managerId",
+								"value": "25",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/property/countManagerTable/property/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"countManagerTable",
+								"property",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "managers properties all list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "managerId",
+								"value": "2",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/property/countManagerAllTable/property/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"countManagerAllTable",
+								"property",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blocks",
+			"item": [
+				{
+					"name": "get-blocks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"blocks_name\": \"Block AB\",\r\n    \"propertyId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/blocks/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blocks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-blocks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"blocks_name\":\"Blocks 1\",\r\n    \"propertyId\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/blocks/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blocks",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-blocks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blocks/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blocks",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-blocks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"blocks_name\":\"Block-A\",\r\n    \"propertyId\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/blocks/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blocks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-blocks",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blocks/11",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blocks",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count-blocks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blocks/count/blocks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blocks",
+								"count",
+								"blocks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Units",
+			"item": [
+				{
+					"name": "getAll-unAssignTenant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/units/unAssign/get-tenant",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"units",
+								"unAssign",
+								"get-tenant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-units",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"units_name\":\"Unit 1001\",\r\n//     \"blockId\":\"1\"\r\n// }\r\n\r\n\r\n{\r\n    \"from\": \"101\",\r\n    \"to\": \"103\",\r\n    \"blockId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/units/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"units",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-units",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/units/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"units",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-units",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/units/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"units",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign-units",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"units_name\": \"Example Unit\",\r\n    \"blockId\": \"1\",\r\n    \"userId\": [\"6\"],\r\n    \"isAssign\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/units/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"units",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-units",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/units/38",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"units",
+								"38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-multiple-units",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ids",
+									"value": "1,2,3",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/units/multipleDlelete?ids=1,2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"units",
+								"multipleDlelete"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "1,2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unAssignUnit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/* {\r\n    \"units_name\": \"01\",\r\n    \"blockId\": \"1\",\r\n    \"userId\": \"3\"\r\n} */\r\n\r\n{\r\n    \"units_name\": \"Example Unit\",\r\n    \"blockId\": \"2\",\r\n    \"userId\": [\"0\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/units/unAssign/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"units",
+								"unAssign",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "units-count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/units/available/units",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"units",
+								"available",
+								"units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-units",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"units_name\":\"02\",\r\n    \"blockId\":\"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/units/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"units",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "announcement",
+			"item": [
+				{
+					"name": "create-announcement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"announcement_title\": \"Society Meeting\",\r\n    \"description\": \"Festivale Event\" /* ,\r\n    \"userId\" : \"5\",\r\n    \"propertyId\" : \"1\" */\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/announcement/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"announcement",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-Announcements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/announcement/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"announcement",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingle-Announcements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/announcement/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"announcement",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-Announcements",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/announcement/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"announcement",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-Announcements",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/announcement/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"announcement",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "create-message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ticketId\":2,\r\n    \"sender\":3,\r\n    \"receiver\":2,\r\n    \"message\":\"HI......\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/chat/send-message",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tickets",
+			"item": [
+				{
+					"name": "Create-Tickets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ticketName",
+									"value": "testing 1 ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hello 1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/shubh/OneDrive/Pictures/eSociety/images (1).jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/ticket/ticket/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ticket",
+								"ticket",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll-tickets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/ticket/getAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ticket",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-tickets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/ticket/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ticket",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-ticket",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "Content-Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ticketstatus",
+									"value": "open",
+									"type": "text"
+								},
+								{
+									"key": "ticketName",
+									"value": "hello11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/ticket/131",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ticket",
+								"131"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-ticket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/ticket/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ticket",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ticket-Chat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/ticket/ticketchat/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ticket",
+								"ticketchat",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "property-Wise-Tickets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/ticket/propertiesWise/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ticket",
+								"propertiesWise",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTickets-Manager",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/ticket/getAllTicket/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"ticket",
+								"getAllTicket",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
